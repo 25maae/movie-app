@@ -24,3 +24,6 @@ Year: ${movieYear}
 Rating: ${userRating}/10
 Genre: ${movieGenre}`;
 console.log(multiLineMessage);
+
+const movieTitles = ["The Matrix", "Inception", "Interstellar"];
+console.log("Movie list:", movieTitles);
