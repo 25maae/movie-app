@@ -74,7 +74,7 @@ console.log("Listen nu:", movieTitles);
 const movie = {
   title: "The Matrix",
   year: 1999,
-  rating: 8.7
+  rating: 8.7,
 };
 
 console.log("Complete movie object:", movie);
@@ -92,7 +92,7 @@ const realMovie = {
   genre: ["Action", "Sci-Fi"],
   director: "Lana Wachowski, Lilly Wachowski",
   rating: 8.7,
-  actors: ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"]
+  actors: ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
 };
 
 console.log("Movie ID:", realMovie.id); // realMovie.genre[0] kombinerer objekt- og array-adgang //
@@ -118,9 +118,9 @@ console.log("Ny rating:", realMovie.rating);
 console.log("Nu er den set:", realMovie.watched);
 
 // Lav en flot beskrivelse med objektdata
-  // ${realMovie.title} henter title fra objektet //
-  // ${realMovie.genre[0]} henter første genre fra array //
-  // ${realMovie.actors[0]} henter første skuespiller fra array //
+// ${realMovie.title} henter title fra objektet //
+// ${realMovie.genre[0]} henter første genre fra array //
+// ${realMovie.actors[0]} henter første skuespiller fra array //
 
 const movieDescription = `
 🎬 ${realMovie.title} (${realMovie.year})
@@ -141,16 +141,72 @@ const allMovies = [
     title: "The Matrix",
     year: 1999,
     rating: 8.7,
-    genre: ["Action", "Sci-Fi"]
+    genre: ["Action", "Sci-Fi"],
   },
   {
     id: 2,
     title: "Inception",
     year: 2010,
     rating: 8.8,
-    genre: ["Action", "Thriller"]
-  }
+    genre: ["Action", "Thriller"],
+  },
 ];
 
 console.log("Complete movie database:", allMovies);
 console.log("Number of movies:", allMovies.length);
+
+// Hent den første film (index 0)
+const firstMovie = allMovies[0]; // allMovies[0] henter første movie object //
+console.log("Første film objekt:", førsteFilm);
+console.log("First movie title:", firstMovie.title); // allMovies[0].title henter titlen fra første movie //
+
+// Eller gør det direkte i ét trin
+console.log("Second movie year:", allMovies[1].year); // allMovies[1].year henter året fra anden movie direkte //
+console.log("Second movie rating:", allMovies[1].rating);
+
+// Udvid databasen med mere komplekse objekter
+const allMovies = [
+  {
+    id: 1,
+    title: "The Matrix",
+    year: 1999,
+    rating: 8.7,
+    genre: ["Action", "Sci-Fi"],
+    director: "Lana Wachowski, Lilly Wachowski"
+  },
+  {
+    id: 2,
+    title: "Inception",
+    year: 2010,
+    rating: 8.8,
+    genre: ["Action", "Thriller", "Sci-Fi"],
+    director: "Christopher Nolan"
+  },
+  {
+    id: 3,
+    title: "The Dark Knight",
+    year: 2008,
+    rating: 9.0,
+    genre: ["Action", "Crime", "Drama"],
+    director: "Christopher Nolan"
+  }
+];
+
+console.log("All movies:", allMovies);
+
+// Hent komplekse data
+console.log("Matrix first genre:", allMovies[0].genre[0]);
+console.log("Inception director:", allMovies[1].director);
+console.log("Dark Knight number of genres:", allMovies[2].genre.length);
+
+// Hent alle genrer for første film
+const matrixGenres = allMovies[0].genre;
+console.log("Matrix alle genrer:", matrixGenres.join(", "));
+
+// Loop through all movies
+for (const movie of allMovies) {
+  console.log(`🎬 ${movie.title} (${movie.year})`);
+  console.log(`⭐ Rating: ${movie.rating}`);
+  console.log(`🎭 Genre: ${movie.genre[0]}`);
+  console.log("---");
+}
