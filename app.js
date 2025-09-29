@@ -50,3 +50,107 @@ console.log("Tredje film (index 2):", movieTitles[2]);
 // Find længden af listen
 console.log("Antal film i listen:", movieTitles.length);
 console.log("Sidste film (smart måde):", movieTitles[movieTitles.length - 1]);
+
+// Tilføj film til slutningen
+movieTitles.push("The Dark Knight");
+console.log("Efter tilføjelse:", movieTitles);
+console.log("Nu har vi", movieTitles.length, "film!");
+
+// Tilføj flere på én gang
+movieTitles.push("Pulp Fiction", "Goodfellas");
+console.log("Efter flere tilføjelser:", movieTitles);
+
+// Fjern den sidste film
+const fjernetFilm = movieTitles.pop();
+console.log("Fjernet film:", movieTitles);
+console.log("Listen nu:", movieTitles);
+
+// Fjern den første film
+const førsteFjernet = movieTitles.shift();
+console.log("Første fjernet:", førsteFjernet);
+console.log("Listen nu:", movieTitles);
+
+// An object collects ALL data about one movie! 🎉 (like in your movies.json)
+const movie = {
+  title: "The Matrix",
+  year: 1999,
+  rating: 8.7
+};
+
+console.log("Complete movie object:", movie);
+
+// Get specific properties with dot notation
+console.log("Movie title:", movie.title);
+console.log("Release year:", movie.year);
+console.log("Rating:", movie.rating);
+
+// Real movie object structure (exactly like your movies.json!)
+const realMovie = {
+  id: 2,
+  title: "The Matrix",
+  year: 1999,
+  genre: ["Action", "Sci-Fi"],
+  director: "Lana Wachowski, Lilly Wachowski",
+  rating: 8.7,
+  actors: ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"]
+};
+
+console.log("Movie ID:", realMovie.id); // realMovie.genre[0] kombinerer objekt- og array-adgang //
+console.log("Title:", realMovie.title);
+console.log("First genre:", realMovie.genre[0]);
+console.log("Director:", realMovie.director);
+console.log("First actor:", realMovie.actors[0]);
+
+// Vi kan tilføje nyt data til eksisterende objekter
+realMovie.watched = false;
+realMovie.review = "Fantastisk film!";
+
+console.log("Er filmen set?", realMovie.watched);
+console.log("Anmeldelse:", realMovie.review);
+
+// Vi kan også ændre data der allerede findes
+console.log("Gammel rating:", realMovie.rating);
+
+realMovie.rating = 9.0; // Opgraderet!
+realMovie.watched = true; // Nu har vi set den!
+
+console.log("Ny rating:", realMovie.rating);
+console.log("Nu er den set:", realMovie.watched);
+
+// Lav en flot beskrivelse med objektdata
+  // ${realMovie.title} henter title fra objektet //
+  // ${realMovie.genre[0]} henter første genre fra array //
+  // ${realMovie.actors[0]} henter første skuespiller fra array //
+
+const movieDescription = `
+🎬 ${realMovie.title} (${realMovie.year})
+⭐ Rating: ${realMovie.rating}/10  
+🎭 First genre: ${realMovie.genre[0]}
+� Director: ${realMovie.director}
+👥 First actor: ${realMovie.actors[0]}
+📝 ${realMovie.review}
+`;
+
+console.log("Movie info:");
+console.log(movieDescription);
+
+// Array of movie objects - exactly like allMovies in your project! 🎉
+const allMovies = [
+  {
+    id: 1,
+    title: "The Matrix",
+    year: 1999,
+    rating: 8.7,
+    genre: ["Action", "Sci-Fi"]
+  },
+  {
+    id: 2,
+    title: "Inception",
+    year: 2010,
+    rating: 8.8,
+    genre: ["Action", "Thriller"]
+  }
+];
+
+console.log("Complete movie database:", allMovies);
+console.log("Number of movies:", allMovies.length);
