@@ -211,22 +211,10 @@ for (const movie of allMovies) {
   console.log("---");
 }
 
-// Gentaget kode - ikke så smart... 😕
-console.log("Hej Emma! Velkommen til filmappen! 🎬");
-console.log("Hej Lucas! Velkommen til filmappen! 🎬");
-console.log("Hej Sofie! Velkommen til filmappen! 🎬");
-console.log("Hej Thomas! Velkommen til filmappen! 🎬");
-// Hvad hvis vi skal hilse på 100 personer?
-
 // En funktion - genbrugelig kode! 🎉
 function sayHello() {
   console.log("Hej! Velkommen til filmappen! 🎬");
 }
-
-// Nu kan vi bruge den mange gange
-sayHello();
-sayHello();
-sayHello();
 
 // Funktion med parameter - input til funktionen!
 function sayHelloTo(name) {
@@ -261,14 +249,6 @@ console.log("The Matrix er", matrixAge, "år gammel");
 
 // Eller brug det direkte
 console.log("Inception er", calculateMovieAge(2010), "år gammel");
-
-// Gentaget kode for at beskrive film...
-const movie1 = { title: "The Matrix", year: 1999, rating: 8.7 };
-const movie2 = { title: "Inception", year: 2010, rating: 8.8 };
-
-console.log(`🎬 ${movie1.title} (${movie1.year}) - Rating: ⭐ ${movie1.rating}`);
-console.log(`🎬 ${movie2.title} (${movie2.year}) - Rating: ⭐ ${movie2.rating}`);
-// Meget gentaget kode igen! 😕
 
 // Function that takes a movie object as parameter (like your displayMovie function)
 function displayMovieInfo(movie) {
