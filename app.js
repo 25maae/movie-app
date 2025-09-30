@@ -210,3 +210,119 @@ for (const movie of allMovies) {
   console.log(`🎭 Genre: ${movie.genre[0]}`);
   console.log("---");
 }
+
+// Gentaget kode - ikke så smart... 😕
+console.log("Hej Emma! Velkommen til filmappen! 🎬");
+console.log("Hej Lucas! Velkommen til filmappen! 🎬");
+console.log("Hej Sofie! Velkommen til filmappen! 🎬");
+console.log("Hej Thomas! Velkommen til filmappen! 🎬");
+// Hvad hvis vi skal hilse på 100 personer?
+
+// En funktion - genbrugelig kode! 🎉
+function sayHello() {
+  console.log("Hej! Velkommen til filmappen! 🎬");
+}
+
+// Nu kan vi bruge den mange gange
+sayHello();
+sayHello();
+sayHello();
+
+// Funktion med parameter - input til funktionen!
+function sayHelloTo(name) {
+  console.log(`Hej ${name}! Velkommen til filmappen! 🎬`);
+}
+
+// Nu kan vi give forskellige navne
+sayHelloTo("Emma");
+sayHelloTo("Lucas");
+sayHelloTo("Sofie");
+
+// Funktion med flere parametre
+function sayHelloToUser(name, age) {
+  console.log(`Hej ${name}! Du er ${age} år og velkommen til filmappen! 🎬`);
+}
+
+// Giv flere inputs til funktionen
+sayHelloToUser("Emma", 25);
+sayHelloToUser("Lucas", 30);
+sayHelloToUser("Sofie", 22);
+
+// Funktion der beregner og returnerer en værdi
+function calculateMovieAge(releaseYear) {
+  const currentYear = 2025;
+  const age = currentYear - releaseYear;
+  return age; // Send resultatet tilbage!
+}
+
+// Gem resultatet i en variabel
+const matrixAge = calculateMovieAge(1999);
+console.log("The Matrix er", matrixAge, "år gammel");
+
+// Eller brug det direkte
+console.log("Inception er", calculateMovieAge(2010), "år gammel");
+
+// Gentaget kode for at beskrive film...
+const movie1 = { title: "The Matrix", year: 1999, rating: 8.7 };
+const movie2 = { title: "Inception", year: 2010, rating: 8.8 };
+
+console.log(`🎬 ${movie1.title} (${movie1.year}) - Rating: ⭐ ${movie1.rating}`);
+console.log(`🎬 ${movie2.title} (${movie2.year}) - Rating: ⭐ ${movie2.rating}`);
+// Meget gentaget kode igen! 😕
+
+// Function that takes a movie object as parameter (like your displayMovie function)
+function displayMovieInfo(movie) {
+  const movieInfo = `🎬 ${movie.title} (${movie.year}) - Rating: ⭐ ${movie.rating}`;
+  return movieInfo;
+}
+
+// Now we can reuse this for any movie!
+const testMovie = {
+  id: 1,
+  title: "The Matrix",
+  year: 1999,
+  rating: 8.7,
+  genre: ["Action", "Sci-Fi"]
+};
+
+console.log(displayMovieInfo(testMovie));
+
+// Funktion der henter film titel
+function getMovieTitle(movieObject) {
+  return movieObject.title;
+}
+
+// Funktion der henter film år
+function getMovieYear(movieObject) {
+  return movieObject.year;
+}
+
+// Funktion der beregner film alder
+function getMovieAge(movieObject) {
+  const currentYear = 2025;
+  return currentYear - movieObject.year;
+}
+
+// Test funktionerne
+console.log("Film titel:", getMovieTitle(testMovie));
+console.log("Film år:", getMovieYear(testMovie));
+console.log("Film alder:", getMovieAge(testMovie), "år");
+
+// Create a test database (match your project structure)
+const allMovies = [
+  { title: "The Matrix", year: 1999, rating: 8.7, genre: ["Action", "Sci-Fi"] },
+  { title: "Inception", year: 2010, rating: 8.8, genre: ["Action", "Thriller"] },
+  { title: "The Dark Knight", year: 2008, rating: 9.0, genre: ["Action", "Crime"] },
+  { title: "Pulp Fiction", year: 1994, rating: 8.9, genre: ["Crime", "Drama"] }
+];
+
+// Function that displays all movies nicely
+function displayAllMovies(movieArray) {
+  console.log("\n=== ALLE FILM ===");
+  for (const movie of movieArray) {
+    console.log(displayMovieInfo(movie)); // Genbruger vores funktion!
+  }
+}
+
+// Test funktionen med vores film database
+displayAllMovies(allMovies);
